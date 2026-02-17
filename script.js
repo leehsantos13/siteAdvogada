@@ -59,7 +59,7 @@ form.addEventListener('submit', (e) => {
     
     setTimeout(() => {
         btn.textContent = 'Solicitação enviada!';
-        btn.style.background = '#2ecc71';
+        btn.style.background = '#9a5c63';
         form.reset();
         
         setTimeout(() => {
