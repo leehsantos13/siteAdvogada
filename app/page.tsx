@@ -147,7 +147,7 @@ export default function Home() {
               <div className="sobre-conteudo">
                 <h2>Sobre mim</h2>
                 <p>
-                  Júlia Cabral, advogada recém formada mas com experiência no
+                  Advogada recém formada mas com experiência no
                   atendimento a pessoas físicas e jurídicas. Comprometida com a
                   resolução eficiente dos casos e com um atendimento humanizado,
                   prezando pela transparência e confiança em cada etapa do
