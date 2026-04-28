@@ -1,67 +1,36 @@
-# Site Advocacia - Consultoria Jurídica
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Site institucional para advogada, com apresentação de serviços, seção "Sobre" e formulário de contato para agendamento de reuniões.
+## Getting Started
 
-## Tecnologias
-
-- HTML5
-- CSS3
-- JavaScript (vanilla)
-- Nginx (produção)
-
-## Estrutura do projeto
-
-```
-├── index.html      # Página principal
-├── styles.css      # Estilos
-├── script.js       # Interatividade (menu mobile, formulário, máscara de telefone)
-├── setup-vps.sh    # Script de deploy para Ubuntu 22.04
-└── README.md
-```
-
-## Seções do site
-
-- **Hero** – Apresentação e CTA para agendar reunião
-- **Sobre** – Descrição profissional
-- **Serviços** – Áreas de atuação (Civil, Família, Imobiliário, Trabalhista, Previdenciário, Consultoria)
-- **Contato** – Formulário de agendamento, e-mail, WhatsApp e horário de atendimento
-
-## Executando localmente
-
-Abra o `index.html` no navegador ou use a extensão **Live Server** no VS Code/Cursor.
-
-## Deploy na VPS (Ubuntu 22.04)
-
-1. Envie os arquivos para a VPS:
-   ```bash
-   scp index.html styles.css script.js setup-vps.sh usuario@IP_DA_VPS:~/
-   ```
-
-2. Na VPS, execute:
-   ```bash
-   sed -i 's/\r$//' setup-vps.sh   # Corrige quebras de linha (se necessário)
-   bash setup-vps.sh
-   ```
-
-3. O script instala Nginx, configura o site e define o firewall. O site ficará em `http://IP_DA_VPS`.
-
-### HTTPS com Let's Encrypt (domínio próprio)
+First, run the development server:
 
 ```bash
-sudo apt install certbot python3-certbot-nginx -y
-sudo certbot --nginx -d seudominio.com.br
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Personalização
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Edite o `index.html` para ajustar:
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-- E-mail de contato
-- Número do WhatsApp (`https://wa.me/55DDNNNNNNNNNN`)
-- Número da OAB no rodapé
-- Texto da seção "Sobre"
-- Foto profissional (substituir o placeholder)
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Licença
+## Learn More
 
-Uso livre para fins pessoais e comerciais.
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
