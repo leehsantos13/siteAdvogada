@@ -44,11 +44,46 @@ export default function Home() {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    console.log("Dados do agendamento:", formData);
-    setButtonDisabled(true);
-    setButtonText("Enviando...");
+    // Formatar a mensagem com os dados do formulário
+    const assuntoMap: { [key: string]: string } = {
+      civil: "Direito Civil",
+      imobiliario: "Direito Imobiliário",
+      trabalhista: "Direito Trabalhista",
+      previdenciario: "Direito Previdenciário",
+      consultoria: "Consultoria Jurídica",
+      outro: "Outro",
+    };
 
+    const assuntoFormatado = assuntoMap[formData.assunto] || formData.assunto;
+
+    const mensagemWhatsApp = `
+*Solicitação de Agendamento*
+
+*Nome:* ${formData.nome}
+*Email:* ${formData.email}
+*Telefone:* ${formData.telefone}
+*Área de Interesse:* ${assuntoFormatado}
+
+*Descrição do caso:*
+${formData.mensagem || "(Não informado)"}
+    `.trim();
+
+    // Codificar a mensagem para URL
+    const mensagemCodificada = encodeURIComponent(mensagemWhatsApp);
+
+    // Número do WhatsApp da advogada (atualize com o número correto)
+    const numeroWhatsApp = "5513974064590";
+
+    // Criar URL do WhatsApp
+    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
+
+    setButtonDisabled(true);
+    setButtonText("Abrindo WhatsApp...");
+
+    // Abrir o WhatsApp em nova aba após pequeno delay
     setTimeout(() => {
+      window.open(urlWhatsApp, "_blank");
+      
       setButtonText("Solicitação enviada!");
       setFormData({ nome: "", email: "", telefone: "", assunto: "", mensagem: "" });
 
@@ -56,7 +91,7 @@ export default function Home() {
         setButtonText("Enviar solicitação");
         setButtonDisabled(false);
       }, 3000);
-    }, 1000);
+    }, 500);
   };
 
   return (
@@ -236,8 +271,8 @@ export default function Home() {
                     <span className="contato-icone">📧</span>
                     <div>
                       <strong>E-mail</strong>
-                      <a href="mailto:contato@juliacabral.adv.br">
-                        contato@juliacabral.adv.br
+                      <a href="mailto:juliacabral.juridico@gmail.com">
+                        juliacabral.juridico@gmail.com
                       </a>
                     </div>
                   </div>
