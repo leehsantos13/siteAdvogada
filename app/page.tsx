@@ -281,11 +281,11 @@ ${formData.mensagem || "(Não informado)"}
                     <div>
                       <strong>WhatsApp</strong>
                       <a
-                        href="https://wa.me/5511111111111?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta"
+                        href="https://wa.me/5511924885639?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta"
                         target="_blank"
                         rel="noreferrer"
                       >
-                        (XX) XXXXX-XXXX
+                        (11) 92488-5639
                       </a>
                     </div>
                   </div>
@@ -390,7 +390,7 @@ ${formData.mensagem || "(Não informado)"}
 
       <a
         className="whatsapp-fixo"
-        href="https://wa.me/5511111111111?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta"
+        href="https://wa.me/5511924885639?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta"
         target="_blank"
         rel="noreferrer"
         aria-label="WhatsApp"
